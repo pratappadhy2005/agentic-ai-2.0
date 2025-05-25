@@ -1,0 +1,12 @@
+Hello, this is a sample text file.
+It contains multiple lines of text.
+
+Each line is separated by a newline character.
+This can be useful for testing file reading and writing in Python.
+
+- Line 1: Introduction
+- Line 2: Blank Line
+- Line 3: Newline Example
+- Line 4: Usage Notes
+
+End of file.

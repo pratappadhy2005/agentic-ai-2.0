@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <book id="bk101">
+        <title>Python Basics</title>
+        <author>John Doe</author>
+        <genre>Programming</genre>
+        <price>29.99</price>
+        <publish_date>2024-01-15</publish_date>
+        <description>A beginner's guide to Python programming.</description>
+    </book>
+    <book id="bk102">
+        <title>Advanced Python</title>
+        <author>Jane Smith</author>
+        <genre>Programming</genre>
+        <price>45.50</price>
+        <publish_date>2024-06-10</publish_date>
+        <description>Deep dive into advanced Python topics and best practices.</description>
+    </book>
+</catalog>
