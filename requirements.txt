@@ -8,3 +8,6 @@ langchain-core
 langchain-community
 pypdf
 wikipedia
+unstructured
+tiktoken
+openai
