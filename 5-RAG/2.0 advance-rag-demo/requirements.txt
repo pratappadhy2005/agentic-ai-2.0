@@ -1,0 +1,12 @@
+langchain
+sentence-transformers
+langchain-text-splitters
+langchain-community
+pypdf
+pandas
+sentence-transformers
+chromadb
+openai
+python-dotenv
+umap-learn
+matplotlib
