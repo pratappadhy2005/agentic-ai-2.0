@@ -1,5 +1,5 @@
 def main():
-    print("Hello from ch-1!")
+    print("Hello from 2-8-langchain-tutorial!")
 
 
 if __name__ == "__main__":
