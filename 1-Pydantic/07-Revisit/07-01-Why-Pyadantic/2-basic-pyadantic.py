@@ -1,15 +1,15 @@
 from pydantic import BaseModel, EmailStr, AnyUrl, Field
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Annotated
 
 class Patient(BaseModel):
-    name: str = Field(max_length=50, description='Name of the patient')
-    email: EmailStr = Field(..., description='Email of the patient')
+    name: Annotated[str, Field(max_length=50, description='Name of the patient', example='Pratap')]
+    email: Annotated[EmailStr, Field(..., description='Email of the patient', example='pratap@example.com')]
     linkedInUrl: Optional[AnyUrl] = None
-    age: int = Field(gt=0, lt=90, description='Age of the patient')
-    weight: float = Field(gt=0, lt=120, description='Weight in kilograms')
-    married: bool = Field(default=False, description='Married status')
-    allergies: Optional[List[str]] = Field(None, max_length=5, description='List of allergies')
-    contact_details: Dict[str, str] = Field({}, description='Contact details')
+    age: Annotated[int, Field(gt=0, lt=90, description='Age of the patient', example=30)]
+    weight: Annotated[float, Field(gt=0, lt=120, description='Weight in kilograms', example=70.5)]    
+    married: Annotated[bool, Field(default=False, description='Married status', example=False)]
+    allergies: Optional[List[str]] = Field(None, max_length=5, description='List of allergies', example=['Peanuts', 'Shellfish'])
+    contact_details: Dict[str, str] = Field({}, description='Contact details', example={'email': 'pratap@example.com', 'phone': '1234567890'})
 
 
 def insert_patient_date(patient: Patient):
@@ -32,6 +32,6 @@ def update_patient_date(patient: Patient):
     print(patient.contact_details)
     print('Updated patient data')
 
-patient = Patient(name='Pratap', email='pratap@example.com', linkedInUrl='https://www.linkedin.com/in/pratap-padhy/', age=30, weight=1,  contact_details={'email': 'pratap@example.com', 'phone': '1234567890'})
+patient = Patient(name='Pratap', email='pratap@example.com', linkedInUrl='https://www.linkedin.com/in/pratap-padhy/', age=30, weight=70.5,  contact_details={'email': 'pratap@example.com', 'phone': '1234567890'}, allergies=['Peanuts'])
 insert_patient_date(patient)
 update_patient_date(patient)
