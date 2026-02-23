@@ -1,8 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr, AnyUrl
 from typing import List, Dict, Optional
 
 class Patient(BaseModel):
     name: str
+    email: EmailStr
+    linkedInUrl: Optional[AnyUrl] = None
     age: int
     weight: float
     married: bool = False
@@ -12,12 +14,16 @@ class Patient(BaseModel):
 
 def insert_patient_date(patient: Patient):
     print(patient.name)
+    print(patient.email)
+    print(patient.linkedInUrl)
     print(patient.age)
     print('Inserted patient data')
 
 
 def update_patient_date(patient: Patient):
     print(patient.name)
+    print(patient.email)
+    print(patient.linkedInUrl)
     print(patient.age)
     print(patient.weight)
     print(patient.married)
@@ -25,6 +31,6 @@ def update_patient_date(patient: Patient):
     print(patient.contact_details)
     print('Updated patient data')
 
-patient = Patient(name='Pratap', age=30, weight=70.5, married=True, contact_details={'email': 'pratap@example.com', 'phone': '1234567890'})
+patient = Patient(name='Pratap', email='pratap@example.com', linkedInUrl='https://www.linkedin.com/in/pratap-padhy/', age=30, weight=70.5,  contact_details={'email': 'pratap@example.com', 'phone': '1234567890'})
 insert_patient_date(patient)
 update_patient_date(patient)
