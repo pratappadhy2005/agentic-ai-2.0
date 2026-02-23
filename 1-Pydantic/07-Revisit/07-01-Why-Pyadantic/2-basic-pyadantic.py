@@ -1,12 +1,12 @@
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 class Patient(BaseModel):
     name: str
     age: int
     weight: float
     married: bool = False
-    allergies: List[str] = []
+    allergies: Optional[List[str]] = None
     contact_details: Dict[str, str] = {}
 
 
@@ -25,6 +25,6 @@ def update_patient_date(patient: Patient):
     print(patient.contact_details)
     print('Updated patient data')
 
-patient = Patient(name='Pratap', age=30, weight=70.5, married=True, allergies=['Peanuts'], contact_details={'email': 'pratap@example.com', 'phone': '1234567890'})
+patient = Patient(name='Pratap', age=30, weight=70.5, married=True, contact_details={'email': 'pratap@example.com', 'phone': '1234567890'})
 insert_patient_date(patient)
 update_patient_date(patient)
