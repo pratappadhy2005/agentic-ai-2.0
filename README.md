@@ -1,4 +1,4 @@
-# 🤖 Agentic AI Framework
+# 🤖 Agentic Advanced AI Framework
 
 A modular, extensible Python framework for building **Agentic AI applications** using LangChain, OpenAI, and other tools. Define autonomous, tool-using agents capable of planning, reasoning, and interacting with APIs, files, humans, and other agents.
 
